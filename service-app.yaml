@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontoffice-service
+  namespace: microservices
+spec:
+  selector:
+    app: frontoffice
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backoffice-service
+  namespace: microservices
+spec:
+  selector:
+    app: backoffice
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
